@@ -11,6 +11,13 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+
+Route::get('/', function () {
+	$title = "SuiviDesLaureats- Accueil";
+    return view('master', ['title' => $title]);
 });
