@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::get('/', function () {
 	$title = "SuiviDesLaureats- Accueil";
-    return view('master', ['title' => $title]);
+    return view('pages/index', ['title' => $title]);
 });
