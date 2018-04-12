@@ -16,7 +16,8 @@
                     <li class="scroll active"><a href="#home">Accueil </a></li>
                     <li class="scroll"><a href="#services">Service </a></li>
                     <li class="scroll"><a href="#animated-number">Statistique</a></li>       
-                    <li class="scroll"><a href="#auth">Authentification</a></li>                        
+                    <li class="scroll"><a href="#auth">Authentification</a></li>              
+                    <li class="scroll"><a href="#inscription">Inscription</a></li>                        
                 </ul>
             </div>
         </div><!--/.container-->

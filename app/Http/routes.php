@@ -19,5 +19,15 @@ Route::get('/', function () {
 
 Route::get('/', function () {
 	$title = "SuiviDesLaureats- Accueil";
-    return view('pages/index', ['title' => $title]);
+	$targetView = "";
+   
+    return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
+});
+
+
+Route::post('inscription', function () {	
+	$title = "SuiviDesLaureats- Accueil";
+	$targetView = strtolower($_POST["targetView"]);
+
+    return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
 });

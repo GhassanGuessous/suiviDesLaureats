@@ -10,4 +10,5 @@
 	@include('pages/basic/services')
 	@include('pages/basic/statistiques')
 	@include('pages/tasks/auth')
+	@include('pages/tasks/inscription')
 @stop

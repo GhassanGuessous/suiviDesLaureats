@@ -14,9 +14,7 @@
     <link href="assets/css/owl.transitions.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">  
     <!--  auth styles  -->
-    <link rel="stylesheet" type="text/css" href="assets/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/select2/select2.min.css">    
-    <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mesStyles.css">
 
 </head><!--/head-->
 
@@ -55,12 +53,7 @@
     <script src="assets/js/jquery.inview.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
-	<script src="assets/js/scrolling-nav.js"></script>
-    <!-- auth scripts -->
-    <script src="assets/js/popper.js"></script>    
-    <script src="assets/select2/select2.min.js"></script>
-    <script src="assets/tilt/tilt.jquery.min.js"></script>
-   
+	<script src="assets/js/scrolling-nav.js"></script>   
 
 <script>
 

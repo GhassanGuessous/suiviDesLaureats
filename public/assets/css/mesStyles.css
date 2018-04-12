@@ -1,0 +1,27 @@
+.mesStyles.btnOne{
+	font-size: 30px;
+	background-color: white;
+	border: 2px solid rgb(243, 156, 18);
+	padding: 18px 35px;
+	color: rgb(243, 156, 18);
+}
+
+.mesStyles.btnOne:hover{
+	font-weight: bold;
+	color: white;
+	background-color: rgb(243, 156, 18);
+}
+
+.mesStyles.btnTwo{
+	font-size: 30px;
+	background-color: white;
+	border: 2px solid #16a085;
+	padding: 18px 35px;
+	color: #16a085;
+}
+
+.mesStyles.btnTwo:hover{
+	font-weight: bold;
+	color: black;
+	background-color: #16a085;
+}
