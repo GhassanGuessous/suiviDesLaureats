@@ -25,3 +25,75 @@
 	color: black;
 	background-color: #16a085;
 }
+
+.publicationImg{
+	height: 80px;
+	width: 80px;	
+	margin-right: 13px;
+	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	-webkit-border-radius: 99em;
+  	-moz-border-radius: 99em;
+  	border-radius: 99em;
+  	box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
+}
+
+.publicationsBackgroundColor{
+	background-color: rgb(255, 252, 221);
+}
+
+.PublicationUserName{
+	font-family: 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif';
+	font-weight: bold;
+	font-size: 23px;
+	display: block;
+}
+
+.publicationUserInfoDiv{
+	padding-top: 8px;
+}
+
+.PublicationUserStatut{
+	font-family: 'Bradley Hand, cursive';
+	font-size: 13px;
+	font-weight: bold;
+	color: #e74c3c;
+	padding-left: 8px;
+}
+
+.publicationContent{
+	color: #95a5a6;
+	font-size: 16px;
+}
+
+.publicationFooter{
+	background-color: rgb(0, 182, 183);
+}
+
+.publicationDislike{
+	color: rgb(223, 239, 238);
+	font-size: 15px;
+}
+
+.publicationLike{
+	color: #c0392b;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.publicationDislike:hover, .publicationLike:hover{
+	color: #c0392b;
+	font-weight: bold;
+}
+
+.publicationNbrLikes{
+	padding-left: 100px;
+	color:  rgb(223, 239, 238);
+}
+
+.nbrLikes{
+	font-weight: bold;
+}
+
+

@@ -31,3 +31,11 @@ Route::post('inscription', function () {
 
     return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
 });
+
+
+Route::get('/home', function () {
+	$title = "SuiviDesLaureats- Accueil";
+	$targetView = "";
+   
+    return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView]);
+});
