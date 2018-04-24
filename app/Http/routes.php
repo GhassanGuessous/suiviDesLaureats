@@ -39,3 +39,11 @@ Route::get('/home', function () {
    
     return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView]);
 });
+
+
+Route::get('/monProfil', function () {
+	$title = "SuiviDesLaureats- Accueil";
+	$targetView = "";
+   
+    return view('pages/tasks/monProfil', ['title' => $title, 'targetView' => $targetView]);
+});

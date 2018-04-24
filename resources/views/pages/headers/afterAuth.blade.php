@@ -13,8 +13,10 @@
 			
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="scroll active"><a href="#home">Accueil</a></li>                      
-                    <li class="scroll active"><a href="#publication">Publications</a></li>                      
+                    <li class="scroll active"><a href="#home">Accueil</a></li>                                
+                    <li class="scroll"><a href="#publier">Publier</a></li>                       
+                    <li class="scroll"><a href="#nouveautes">Nouveautés</a></li>                         
+                    <li class="scroll"><a href="/monProfil">Mon.Profil</a></li>                    
                 </ul>
             </div>
         </div><!--/.container-->
