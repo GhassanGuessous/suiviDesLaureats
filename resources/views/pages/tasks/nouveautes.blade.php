@@ -20,7 +20,7 @@
                                             <img src="assets/images/users/user.1.jpg" class="publicationImg">
                                         </div>
                                         <div class="col-md-10 publicationUserInfoDiv">
-                                            <span class="PublicationUserName">mayzrane.hassan</span>
+                                            <a href="/profil" target="_blanck"><span class="PublicationUserName">mayzrane.hassan</span></a>
                                             <span class="PublicationUserStatut">Etudiant 4éme-année G.INFO</span>     
                                         </div>
                                     </div>                                    
@@ -63,7 +63,9 @@
                                             <img src="assets/images/users/user.2.jpg" class="publicationImg">
                                         </div>
                                         <div class="col-md-10 publicationUserInfoDiv">
-                                            <span class="PublicationUserName">nom.prénom</span>
+                                            <a href="/profil" target="_blanck">
+                                                <span class="PublicationUserName">nom.prénom</span>
+                                            </a>
                                             <span class="PublicationUserStatut">Laureat G.INFO</span>     
                                         </div>
                                     </div>                                    
@@ -107,7 +109,9 @@
                                             <img src="assets/images/users/user.1.jpg" class="publicationImg">
                                         </div>
                                         <div class="col-md-10 publicationUserInfoDiv">
-                                            <span class="PublicationUserName">guessous.ghassan</span>
+                                            <a href="/profil" target="_blanck">
+                                                <span class="PublicationUserName">guessous.ghassan</span>
+                                            </a>
                                             <span class="PublicationUserStatut">Etudiant 4éme-année G.INFO</span>     
                                         </div>
                                     </div>                                    

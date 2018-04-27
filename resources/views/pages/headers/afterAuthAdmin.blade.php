@@ -13,11 +13,9 @@
 			
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="scroll active"><a href="#home">Accueil</a></li>                                
-                    <li class="scroll"><a href="#publier">Publier</a></li>                       
-                    <li class="scroll"><a href="#nouveautes">Nouveautés</a></li>                   
-                    <li class=""><a href="/recherche" target="_blanck">Recherche</a></li>                  
-                    <li class=""><a href="/monProfil" target="_blanck">Mon.Profil</a></li>                    
+                    <li class="scroll active"><a href="#home">Accueil</a></li>                      
+                    <li class="scroll"><a href="#nouveautes">Nouveautés</a></li>                    
+                    <li class="scroll"><a href="#validerInscriptions">Valider.Inscriptions</a></li>                  
                 </ul>
             </div>
         </div><!--/.container-->

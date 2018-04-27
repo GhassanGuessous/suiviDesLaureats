@@ -47,3 +47,20 @@ Route::get('/monProfil', function () {
    
     return view('pages/tasks/monProfil', ['title' => $title, 'targetView' => $targetView]);
 });
+
+
+Route::get('/recherche', function () {
+	$title = "SuiviDesLaureats- Recherche";   
+    return view('pages/tasks/recherche', ['title' => $title]);
+});
+
+
+Route::get('/profil', function () {
+	$title = "SuiviDesLaureats- User.Profil";   
+    return view('pages/tasks/userProfil', ['title' => $title]);
+});
+
+Route::get('/admin', function () {
+	$title = "SuiviDesLaureats- Admin";   
+    return view('pages/tasks/admin', ['title' => $title]);
+});

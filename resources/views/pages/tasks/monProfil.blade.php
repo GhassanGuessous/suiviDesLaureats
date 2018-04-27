@@ -40,9 +40,10 @@
                 <div class='box-info'>
                   <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Infos'></button><h3>Authentification.Infos</h3></p>
 
-                  <div class='line-wh'></div>
+                    <div class='line-wh'></div>
                     <button onclick="" class='b-support'>mon login</button>
-                  <button onclick="" class='b-support'>mon mot de passe</button>
+                    <button onclick="" class='b-support'>mon mot de passe</button>
+                    <button onclick="" class='b-support'>Statut : Etudiant</button>
                     <div class='line-wh'></div>
                     <button onclick="" class='b-cta'>MODIFIER</button>
                 </div>
