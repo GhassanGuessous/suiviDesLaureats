@@ -119,3 +119,31 @@
   	border-radius: 99em;
   	box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
 }
+
+.btnValider{
+	display: inline;
+	background-color: #1abc9c;
+	color: white;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 6px;
+	margin-left: 10px;
+}
+
+.btnValider:hover{
+	background-color: #16a085;
+}
+
+.btnRefuser{
+	display: inline;
+	background-color: #e74c3c;
+	color: white;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 6px;
+	margin-left: 10px;
+}
+
+.btnRefuser:hover{
+	background-color: #c0392b;
+}

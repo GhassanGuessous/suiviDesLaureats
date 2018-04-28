@@ -75,9 +75,9 @@
                                                 <td class="cell100 column5">brandon94@example.com</td>
                                                 <td class="cell100 column6">30</td>
                                                 <td class="cell100 column7">New York City, NY</td>
-                                                <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                <td class="cell100 column8 tFCBtn">
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -88,8 +88,8 @@
                                                 <td class="cell100 column6">26</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -100,8 +100,8 @@
                                                 <td class="cell100 column6">32</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -112,8 +112,8 @@
                                                 <td class="cell100 column6">22</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -124,8 +124,8 @@
                                                 <td class="cell100 column6">25</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -136,8 +136,8 @@
                                                 <td class="cell100 column6">28</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
 
@@ -148,8 +148,8 @@
                                                 <td class="cell100 column6">24</td>
                                                 <td class="cell100 column7">New York City, NY</td>
                                                 <td class="cell100 column8">
-                                                    <input type="button" name="btnValider" value="valider" class="btn btn-success" />
-                                                    <input type="button" name="btnRefuser" value="refuser" class="btn btn-danger" />
+                                                    <input type="button" name="btnValider" value="valider" class="btnValider" />
+                                                    <input type="button" name="btnRefuser" value="refuser" class="btnRefuser" />
                                                 </td>
                                             </tr>
                                         </tbody>
