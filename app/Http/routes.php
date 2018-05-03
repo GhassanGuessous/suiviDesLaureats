@@ -61,6 +61,8 @@ Route::get('/profil', function () {
 });
 
 Route::get('/admin', function () {
-	$title = "SuiviDesLaureats- Admin";   
-    return view('pages/tasks/admin', ['title' => $title]);
+	$title = "SuiviDesLaureats- Admin";
+	$targetView = (isset($_GET["targetView"])) ? $_GET["targetView"] : '';
+
+    return view('pages/admin', ['title' => $title, 'targetView' => $targetView]);
 });
