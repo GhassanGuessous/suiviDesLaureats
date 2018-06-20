@@ -11,16 +11,15 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+session_start();
+$_SESSION['currentUser']['id'] = 1; 		// to do after login task !!
 
 
 
 Route::get('/', 'MainController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/likedPublication/{id}', 'HomeController@like');
+Route::get('/dislikedPublication/{id}', 'HomeController@dislike');
 
 
 
