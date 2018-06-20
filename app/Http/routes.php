@@ -17,12 +17,14 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', function () {
-	$title = "SuiviDesLaureats- Accueil";
-	$targetView = "";
-   
-    return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
-});
+
+
+Route::get('/', 'MainController@index');
+Route::get('/home', 'HomeController@index');
+
+
+
+// to do ::
 
 
 Route::post('inscription', function () {	
@@ -32,13 +34,6 @@ Route::post('inscription', function () {
     return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
 });
 
-
-Route::get('/home', function () {
-	$title = "SuiviDesLaureats- Accueil";
-	$targetView = "";
-   
-    return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView]);
-});
 
 
 Route::get('/monProfil', function () {
