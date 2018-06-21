@@ -10,58 +10,90 @@
 							  <div class="panel-heading">Formulaire d'inscription pour les enseignants</div>
 							  <div class="panel-body">
 							   
-					            <div class="row">
-					            	<label class="col-md-12 control-label" for="sms">Name</label>
-						            <div class="col-md-12">
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="glyphicon glyphicon-user"></i>
-											</span>
-								             <input type="text" id="sms" name="sms" class="form-control" />
-						            	</div>
-									</div>
-								</div>
-								
-								<div class="row">
-									<label class="col-md-12 control-label" for="sms">Login</label>
-						            <div class="col-md-12">
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="glyphicon glyphicon-user"></i>
-											</span>
-								             <input type="text" id="sms" name="sms" class="form-control" />
-						            	</div>
-									</div>
-								</div>
+							  <form action="inscrireEnseignant" method="POST" id="formInscrireEnseignant">
+								  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
-					            <div class="row">			
-					            	<label class="col-md-12 control-label" for="sms">Password</label>
-						            <div class="col-md-12">
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="glyphicon glyphicon-user"></i>
-											</span>
-								             <input type="password" id="sms" name="sms" class="form-control" />
-						            	</div>
-									</div>
-								</div>
-							  	
-					            <div class="row">
-					            	<label class="col-md-12 control-label" for="sms">Filiére</label>
-						            <div class="col-md-12">
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="glyphicon glyphicon-list"></i>
-											</span>
-								             <select id="sms" name="sms" class="form-control">
-								                <option value="en">filière un</option>
-								                <option value="gu">filière deux</option>
-								                <option value="mr">filière trois</option>
-								                <option value="hi">filière quatre</option>
-								            </select>
-						            	</div>
-									</div>           
-								</div>
+									<div class="row">
+											<label class="col-md-12 control-label" for="sms">Nom</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+													</span>
+													<input type="text" id="nom" name="nom" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<label class="col-md-12 control-label" for="sms">Prenom</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+													</span>
+													<input type="text" id="prenom" name="prenom" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<label class="col-md-12 control-label" for="sms">Email</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-envelope"></i>
+													</span>
+													<input type="text" id="email" name="email" class="form-control" />
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<label class="col-md-12 control-label" for="sms">Login</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-log-in"></i>
+													</span>
+													<input type="text" id="login" name="login" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="row">			
+											<label class="col-md-12 control-label" for="sms">Password</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+													</span>
+													<input type="password" id="pass" name="pass" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="row">			
+											<label class="col-md-12 control-label" for="sms">Confirmer Password</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+													</span>
+													<input type="password" id="passConfirm" name="passConfirm" class="form-control" />
+												</div>
+											</div>
+										</div>
+
+										<div class="row" style="margin-top : 10px">
+											<div class="col-md-12">
+												<div class="input-group">
+													<input type="submit" class="btn btn-primary" name="submit"/>
+													<input type="reset" class="btn btn-primary" name="cancel"/>
+												</div>
+											</div>
+										</div>
+									</form>
 
 							  </div>
 							</div><!-- end panel -->

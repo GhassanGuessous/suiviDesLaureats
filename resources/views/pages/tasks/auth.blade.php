@@ -16,7 +16,8 @@
 						<img src="assets/auth.all.dependency/images/img-01.png" alt="IMG">
 					</div>
 
-					<form class="login100-form validate-form">
+					<form class="login100-form validate-form" action="authentification" method="POST">
+						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 						<span class="login100-form-title">
 							Authentification
 						</span>

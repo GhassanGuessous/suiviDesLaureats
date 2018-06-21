@@ -8,7 +8,7 @@
             </div>
             
             @if 	($targetView == 'etudiant')		@include('pages/tasks/inscriptionForms/etudiant')
-            @elseif ($targetView == 'laureat')		@include('pages/tasks/inscriptionForms/laureat')
+            @elseif ($targetView == 'laureat')		@include('pages/tasks/inscriptionForms/etudiant')
             @elseif ($targetView == 'enseignant')	@include('pages/tasks/inscriptionForms/enseignant')
             @else
 

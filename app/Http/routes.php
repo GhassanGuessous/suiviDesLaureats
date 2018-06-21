@@ -38,10 +38,23 @@ Route::post('/publier', 'PublierController@index');
 Route::post('inscription', function () {	
 	$title = "SuiviDesLaureats- Accueil";
 	$targetView = strtolower($_POST["targetView"]);
+	$params = array (
+		'nbrEtudiants'=>DB::table('utilisateurs')->join('status', 'utilisateurs.status_id', '=', 'status.id')->where('status.libelle', 'Etudiant')->count(),
+		'nbrLaureats'=>DB::table('utilisateurs')->join('status', 'utilisateurs.status_id', '=', 'status.id')->where('status.libelle', 'Laureat')->count(),
+		'nbrEnseignants'=>DB::table('utilisateurs')->join('status', 'utilisateurs.status_id', '=', 'status.id')->where('status.libelle', 'Enseignant')->count(),
+		'nbrPublications'=>DB::table('publications')->count());
+	
+	if($targetView == "etudiant" || $targetView == "laureat"){
 
-    return view('pages/index', ['title' => $title, 'targetView' => $targetView]);
+		$filieres = DB::select('select * from filieres');
+		array_push($params, $filieres);
+	}
+    return view('pages/index', ['title' => $title, 'targetView' => $targetView, "params" => $params]);
 });
 
+Route::post('inscrireEtudiantLaureat', 'InscriptionController@saveEtudiantLaureat');
+Route::post('inscrireEnseignant', 'InscriptionController@saveEnseignant');
+Route::post('authentification', 'InscriptionController@auth');
 
 
 Route::get('/monProfil', function () {
