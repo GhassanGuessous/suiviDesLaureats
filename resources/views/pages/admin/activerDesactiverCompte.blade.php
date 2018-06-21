@@ -27,9 +27,11 @@
                                     <td>Bloqué</td>
                                 @endif
                                 <td>
-                                    <form methode="" action="">
-                                        <input type="submit" class="btn btn-success" value="Bloquer"/>
-                                        <input type="submit" class="btn btn-danger" value="Débloquer"/>
+                                    <form method="post" action="/admin/evaluerUtilisateur">
+                                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                        <input type="hidden" name="idUser" value="{{$compte->id}}">
+                                        <input type="submit" name="debloquer" class="btn btn-success" value="Débloquer"/>
+                                        <input type="submit" name="bloquer" class="btn btn-danger" value="Bloquer"/>
                                     </form>
                                 </td>
                             </tr>

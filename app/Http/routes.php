@@ -72,12 +72,13 @@ Route::get('/admin', function () {
 	$title = "SuiviDesLaureats- Admin";
 	$targetView = (isset($_GET["targetView"])) ? $_GET["targetView"] : '';
 	$nomAdmin = $_SESSION['currentUser']['nom'] . " " .  $_SESSION['currentUser']['prenom'];
+	$idAdmin = $_SESSION['currentUser']['id'];
 	$photo = $_SESSION['currentUser']['photo'];
 
 	$dataNotif = array(
 		'nbrNewInsc'=>DB::select('select count(id) nbr from utilisateurs where etat = 0 and status_id <> 4'),
 		'nbrComptesDesactives'=>DB::select('select count(id) nbr from utilisateurs where etat_compte = 0 and status_id <> 4'),
-		'nbrPubAEvaluer'=>DB::select('select count(id) nbr from publications where etat = "en attente"'),
+		'nbrPubAEvaluer'=>DB::select('select count(id) nbr from publications where etat = "désactiver"'),
 		'nbrDemandesChgt'=>DB::select('select count(id) nbr from demandes where etat = "en attente" and admin_id = ' . $_SESSION['currentUser']['id'])
 	);
 
@@ -86,7 +87,7 @@ Route::get('/admin', function () {
 	switch($targetView){
 		case 'validerInscriptions' : 
 			$insc = DB::select('
-				select * 
+				select u.cne, u.id, u.nom, u.prenom, u.etat, u.status_id, s.libelle 
 				from utilisateurs u, status s 
 				where u.status_id = s.id 
 				and etat = 0 
@@ -96,7 +97,7 @@ Route::get('/admin', function () {
 
 		case 'activerDesactiverCompte' : 
 			$comptes = DB::select('
-				select * 
+				select u.id, u.nom, u.prenom, u.etat_compte, s.libelle 
 				from utilisateurs u, status s 
 				where u.status_id = s.id 
 				and etat = 1 
@@ -110,18 +111,18 @@ Route::get('/admin', function () {
 				from utilisateurs u, status s, publications p
 				where u.id = p.utilisateur_id
 				and u.status_id = s.id
-				and p.etat <> "active"
+				and p.etat = "désactiver"
 				and status_id <> 4'
 			);
 			array_push($params, $publications);break;
 
 		case 'chengementStatut' : 
 			$chgtStatus = DB::select('
-				select us.cne, us.nom, us.prenom, s.libelle, d.date
+				select us.cne, us.nom, us.prenom, s.libelle, d.date, d.id
 				from demandes d, utilisateurs us, utilisateurs ua, status s 
 				where d.admin_id = ua.id
 				and d.utilisateur_id = us.id
-				and ua.id = 12
+				and ua.id = '.$idAdmin.'
 				and us.status_id = s.id 
 				and us.etat = 1'
 			);
@@ -139,3 +140,8 @@ Route::get('/admin', function () {
 });
 
 Route::get('/deconnexion', 'InscriptionController@deconnexion');
+
+Route::post('/admin/evaluerInscription', 'InscriptionController@evaluerInscription');
+Route::post('/admin/evaluerUtilisateur', 'InscriptionController@evaluerUtilisateur');
+Route::post('/admin/evaluerPublication', 'InscriptionController@evaluerPublication');
+Route::post('/admin/evaluerDemandes', 'InscriptionController@evaluerDemandes');

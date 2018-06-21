@@ -23,9 +23,11 @@
                                 <td>{{ $pub->libelle }}</td>
                                 <td>{{ $pub->contenu }}</td>
                                 <td>
-                                    <form methode="" action="">
-                                        <input type="submit" class="btn btn-success" value="Accepter"/>
-                                        <input type="submit" class="btn btn-danger" value="Refuser"/>
+                                    <form method="post" action="/admin/evaluerPublication">
+                                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                        <input type="hidden" name="idPub" value="{{$pub->id}}">
+                                        <input type="submit" name="accepter" class="btn btn-success" value="Accepter"/>
+                                        <input type="submit" name="refuser" class="btn btn-danger" value="Refuser"/>
                                     </form>
                                 </td>
                             </tr>

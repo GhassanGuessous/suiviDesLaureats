@@ -21,7 +21,7 @@
                             </tr>
                             @foreach($params[0] as $insc)
                             <tr>
-                                @if($insc->status_id == 1)
+                                @if($insc->status_id == 3)
                                     <td>----</td>
                                 @else
                                     <td>{{ $insc->cne }}</td>
@@ -29,15 +29,19 @@
                                 <td>{{ $insc->id }}</td>
                                 <td>{{ $insc->prenom }} {{ $insc->nom }}</td>
                                 <td>{{ $insc->libelle }}</td>
-                                @if($insc->etat == 1)
-                                    <td>Activée</td>
+                                @if($insc->etat == 0)
+                                    <td>En attente</td>
+                                @elseif($insc->etat == 1)
+                                    <td>Acceptée</td>
                                 @else
                                     <td>Refusée</td>
                                 @endif
                                 <td>
-                                    <form methode="" action="">
-                                        <input type="submit" class="btn btn-success" value="Accepter"/>
-                                        <input type="submit" class="btn btn-danger" value="Refuser"/>
+                                    <form method="post" action="/admin/evaluerInscription">
+                                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                        <input type="hidden" name="idUser" value="{{$insc->id}}">
+                                        <input type="submit" name="accepter" class="btn btn-success" value="Accepter"/>
+                                        <input type="submit" name="refuser" class="btn btn-danger" value="Refuser"/>
                                     </form>
                                 </td>
                             </tr>

@@ -42,7 +42,7 @@ class InscriptionController extends Controller
 					'login' => $login,
 					'password' => $pass,
 					'filiere_id' => $filiere,
-					'status_id' => 2,
+					'status_id' => 1,
 					'url_photo' => $photoName
 				]);
 
@@ -79,7 +79,7 @@ class InscriptionController extends Controller
 					'email' => $email,
 					'login' => $login,
 					'password' => $pass,
-					'status_id' => 1,
+					'status_id' => 3,
 					'url_photo' => $photoName
 				]);
 				
@@ -146,5 +146,73 @@ class InscriptionController extends Controller
 		$_SESSION['currentUser']['nom'] = $utilisateur->nom; 		
 		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom; 
 		$_SESSION['currentUser']['photo'] = $utilisateur->url_photo;
+	}
+
+	public function evaluerInscription(){
+
+		extract($_POST);
+		
+		$utilisater = Utilisateurs::find($idUser);
+
+		if(isset($accepter))
+			$utilisater->etat = 1;
+		if(isset($refuser))
+			$utilisater->etat = 2;
+
+		$utilisater->save();
+
+		return redirect('/admin?targetView=validerInscriptions');
+	}
+
+	public function evaluerUtilisateur(){
+
+		extract($_POST);
+		
+		$utilisater = Utilisateurs::find($idUser);
+
+		if(isset($bloquer))
+			$utilisater->etat_compte = 0;
+		if(isset($debloquer))
+			$utilisater->etat_compte = 1;
+			
+		$utilisater->save();
+
+		return redirect('/admin?targetView=activerDesactiverCompte');
+	}
+
+	public function evaluerPublication(){
+
+		extract($_POST);
+		
+		if(isset($accepter))
+			$etat = 'active';
+		if(isset($refuser))
+			$etat = 'refusée';
+
+		$publication = DB::update('update publications set etat = "' . $etat . '" where id = ' . $idPub);
+
+		return redirect('/admin?targetView=validerPublications');
+	}
+
+	public function evaluerDemandes(){
+
+		extract($_POST);
+		
+		$demande = DB::select('select * from demandes where id = ' . $idDemande);
+
+		if(isset($accepter)){
+			$etat = 'acceptée';
+			$utilisateur = Utilisateurs::find($demande[0]->utilisateur_id);
+
+			//from etudiant to laureat
+			$utilisateur->status_id = 2;
+			$utilisateur->save();
+		}
+		if(isset($refuser))
+			$etat = 'refusée';
+
+		$publication = DB::update('update demandes set etat = "' . $etat . '" where id = ' . $idDemande);
+
+		return redirect('/admin?targetView=chengementStatut');
 	}
 }
