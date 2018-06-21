@@ -10,7 +10,7 @@
 							  <div class="panel-heading">Formulaire d'inscription pour les enseignants</div>
 							  <div class="panel-body">
 							   
-							  <form action="inscrireEnseignant" method="POST" id="formInscrireEnseignant">
+							  <form action="inscrireEnseignant" method="POST" id="formInscrireEnseignant" ENCTYPE="multipart/form-data">
 								  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
 									<div class="row">
@@ -83,6 +83,18 @@
 													<input type="password" id="passConfirm" name="passConfirm" class="form-control" />
 												</div>
 											</div>
+										</div>
+
+										<div class="row">
+											<label class="col-md-12 control-label" for="sms">Photo</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-list"></i>
+													</span>
+													<input type="file" class="custom-file-input" id="photo" name="photo">
+												</div>
+											</div>           
 										</div>
 
 										<div class="row" style="margin-top : 10px">

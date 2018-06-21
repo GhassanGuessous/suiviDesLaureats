@@ -7,6 +7,10 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use App\Utilisateurs;
 
+if(!isset($_SESSION)){
+	session_start();
+}
+
 class InscriptionController extends Controller
 {
     
@@ -21,23 +25,36 @@ class InscriptionController extends Controller
 		$utilisateur = Utilisateurs::where('email', $email)->first();
 
 		if($utilisateur == null){
-			$utilisateur = Utilisateurs::create([
-				'cne' => $cne,
-				'nom' => $nom,
-				'prenom' => $prenom,
-				'date_naissance' => $dateNaiss,
-				'email' => $email,
-				'promo' => $promo,
-				'login' => $login,
-				'password' => $pass,
-				'filiere_id' => $filiere,
-				'status_id' => 2
-			]);
 
-			session_start();
-			$_SESSION["email"] = $utilisateur->email;
+			$codeErreur = $_FILES['photo']['error'];
 
-			return view('pages/tasks/home', ['title' => 'Home']);
+            if ($codeErreur == UPLOAD_ERR_OK) {
+                // Le fichier a bien été transmis
+                $fichier = $_FILES['photo'];
+                // Persister la championnat dans la BD
+                $photoName = $nom . "_" . $prenom . ".jpg";                
+				
+				$utilisateur = Utilisateurs::create([
+					'cne' => $cne,
+					'nom' => $nom,
+					'prenom' => $prenom,
+					'date_naissance' => $dateNaiss,
+					'email' => $email,
+					'promo' => $promo,
+					'login' => $login,
+					'password' => $pass,
+					'filiere_id' => $filiere,
+					'status_id' => 2,
+					'url_photo' => $photoName
+				]);
+
+				// Copie du fichier dans le répertoire assets/images/users/
+                copy($fichier['tmp_name'], "assets/images/users/" . $photoName);
+
+				$this->sessionFunc($utilisateur);
+
+				return redirect('/home');
+			}
 		}
 
 		return redirect('/')->with('erreur', 'emailExist');
@@ -50,19 +67,31 @@ class InscriptionController extends Controller
 		$utilisateur = Utilisateurs::where('email', $email)->first();
 
 		if($utilisateur == null){
-			$utilisateur = Utilisateurs::create([
-				'nom' => $nom,
-				'prenom' => $prenom,
-				'email' => $email,
-				'login' => $login,
-				'password' => $pass,
-				'status_id' => 1
-			]);
+			$codeErreur = $_FILES['photo']['error'];
 			
-			session_start();
-			$_SESSION["email"] = $utilisateur->email;
+            if ($codeErreur == UPLOAD_ERR_OK) {
+                // Le fichier a bien été transmis
+                $fichier = $_FILES['photo'];
+                // Persister la championnat dans la BD
+				$photoName = $nom . "_" . $prenom . ".jpg";
+				
+				$utilisateur = Utilisateurs::create([
+					'nom' => $nom,
+					'prenom' => $prenom,
+					'email' => $email,
+					'login' => $login,
+					'password' => $pass,
+					'status_id' => 1,
+					'url_photo' => $photoName
+				]);
+				
+				// Copie du fichier dans le répertoire assets/images/users/
+				copy($fichier['tmp_name'], "assets/images/users/" . $photoName);
+				
+				$this->sessionFunc($utilisateur);
 
-			return view('pages/tasks/home', ['title' => 'Home']);
+				return redirect('/home');
+			}
 		}
 				   
 	    return redirect('/')->with('erreur', 'emailExist');
@@ -78,15 +107,14 @@ class InscriptionController extends Controller
 
 			if($utilisateur->password == $pass){
 
+				$this->sessionFunc($utilisateur);
+
 				if($utilisateur->status_id == 4){
 					//admin
 					return redirect('/admin');
 				}else{
 					// enseignant / etudiant / laureat
-					session_start();
-					$_SESSION["email"] = $utilisateur->email;
-
-					return view('pages/tasks/home', ['title' => 'Home']);
+					return redirect('/home');
 				}
 			}else{
 				// pass incorrect
@@ -109,5 +137,10 @@ class InscriptionController extends Controller
 	// 	}
 	// }
 
-
+	public function sessionFunc($utilisateur){
+		$_SESSION['currentUser']['id'] = $utilisateur->id; 		
+		$_SESSION['currentUser']['email'] = $utilisateur->email; 		
+		$_SESSION['currentUser']['nom'] = $utilisateur->nom; 		
+		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom; 
+	}
 }

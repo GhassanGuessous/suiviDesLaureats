@@ -17,6 +17,7 @@ class Utilisateurs extends Model
         'login',
         'password',
         'filiere_id',
-        'status_id'
+        'status_id',
+        'url_photo'
     ];
 }

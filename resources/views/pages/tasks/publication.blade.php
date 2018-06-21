@@ -11,7 +11,7 @@
             <script src='assets/publicationTemplate/js/pubTemplateJsTwo.min.js'></script>
             <script src="assets/publicationTemplate/js/pubTemplateJsOne.js"></script>
 
-
+    
 		    @if ($etat == 'done')
 		        <script type="text/javascript">
 		            swal("votre publication à été enregistre", "attendre que l'administrateur lui validé", "success");

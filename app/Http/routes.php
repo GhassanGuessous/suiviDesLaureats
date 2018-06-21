@@ -12,10 +12,10 @@
 */
 
 session_start();
-$_SESSION['currentUser']['id'] = 1; 		// to do after login task !!
-$_SESSION['currentUser']['email'] = 'connectedUserMail@gmail.com'; 		// to do after login task !!
-$_SESSION['currentUser']['nom'] = 'connectedUserNom'; 		// to do after login task !!
-$_SESSION['currentUser']['prenom'] = 'connectedUserPrenom'; 		// to do after login task !!
+// $_SESSION['currentUser']['id'] = 1; 		// to do after login task !!
+// $_SESSION['currentUser']['email'] = 'connectedUserMail@gmail.com'; 		// to do after login task !!
+// $_SESSION['currentUser']['nom'] = 'connectedUserNom'; 		// to do after login task !!
+// $_SESSION['currentUser']['prenom'] = 'connectedUserPrenom'; 		// to do after login task !!
 
 
 

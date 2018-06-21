@@ -13,7 +13,7 @@
 							  <div class="panel-heading">Formulaire d'inscription pour les Laureats</div>
 							@endif
 							  <div class="panel-body">
-							  	<form action="inscrireEtudiantLaureat" method="POST" id="formInscriptionEtudiant">
+							  	<form action="inscrireEtudiantLaureat" method="POST" id="formInscriptionEtudiant" ENCTYPE="multipart/form-data">
 								  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 									<div class="row">
 											<label class="col-md-12 control-label" for="sms">CNE</label>
@@ -135,6 +135,18 @@
 														<option value="{{ $filiere->id }}">{{ $filiere->nom }}</option>
 													@endforeach
 													</select>
+												</div>
+											</div>           
+										</div>
+
+										<div class="row">
+											<label class="col-md-12 control-label" for="sms">Photo</label>
+											<div class="col-md-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="glyphicon glyphicon-list"></i>
+													</span>
+													<input type="file" class="custom-file-input" id="photo" name="photo">
 												</div>
 											</div>           
 										</div>
