@@ -16,6 +16,8 @@
     <link href="assets/css/main.css" rel="stylesheet">  
     <!--  auth styles  -->
     <link rel="stylesheet" type="text/css" href="assets/css/mesStyles.css">
+    <link rel="stylesheet" type="text/css" href="assets/sweetAlert/sweetalert.min.css">
+    <script src="assets/sweetAlert/sweetalert.min.js"></script>
 
 </head><!--/head-->
 

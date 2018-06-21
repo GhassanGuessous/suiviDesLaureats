@@ -134,7 +134,7 @@
         <script type="text/javascript">
             swal("l'email a été envoyé", "Alumni ENSA Safi", "success");
         </script>
-    @elseif ($etat == 'done')
+    @elseif ($etat == 'erreur')
         <script type="text/javascript">
             swal("erreur de connexion", "réessayer plus tard", "error");
         </script>

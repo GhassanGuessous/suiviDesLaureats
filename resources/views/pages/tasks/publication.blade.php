@@ -12,5 +12,15 @@
             <script src="assets/publicationTemplate/js/pubTemplateJsOne.js"></script>
 
 
+		    @if ($etat == 'done')
+		        <script type="text/javascript">
+		            swal("votre publication à été enregistre", "attendre que l'administrateur lui validé", "success");
+		        </script>
+		    @elseif ($etat == 'erreur')
+		        <script type="text/javascript">
+		            swal("erreur de connexion", "réessayer plus tard", "error");
+		        </script>
+		    @endif
+
         </div><!--/.container-->
     </section><!--/#publication-->

@@ -13,7 +13,7 @@ var MessageArea = React.createClass({displayName: "MessageArea",
     render: function(){
         return (
             React.createElement("div", {className: "control"}, 
-                React.createElement("textarea", {id: "message", ref: "messageBox", placeholder: "What's on your mind ?", required: true, onChange: this.handleTextChange}), 
+                React.createElement("textarea", {id: "message", name:"pubText", ref: "messageBox", placeholder: "What's on your mind ?", required: true, onChange: this.handleTextChange}), 
                 React.createElement("label", {for: "message"}, "Contenu")
             )
         )

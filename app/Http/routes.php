@@ -28,7 +28,7 @@ Route::get('/dislikedPublication/{id}', 'HomeController@dislike');
 Route::get('/profil/{id}', 'ProfilController@index');
 
 Route::post('/contact', 'MailSenderController@index');
-Route::post('/publier', 'PublierController@index');
+Route::get('/publier', 'PublierController@index');
 
 
 

@@ -12,7 +12,7 @@ class HomeController extends Controller
 
 
 
-	public function index(){
+	public function index($etat=''){
 		$title = "SuiviDesLaureats- Accueil";
 		$targetView = "";
 		$found = 'false';
@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     //    dd($allPublications);
 
-	 	return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView, 'allPublications' => $allPublications, 'allLikes' => $allLikes, 'found' => $found]);
+	 	return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView, 'allPublications' => $allPublications, 'allLikes' => $allLikes, 'found' => $found, 'etat'=>$etat]);
 	}
 
 
