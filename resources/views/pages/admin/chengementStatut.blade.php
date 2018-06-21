@@ -13,34 +13,25 @@
                         <table class="table">
                             <tr>
                                 <th>CNE</th>
-                                <th>CIN</th>
                                 <th>Prénom & Nom</th>
-                                <th>statut actuel</th>
-                                <th>Nouveau statut</th>
+                                <th>Statut</th>
+                                <th>Date d'envoie</th>
                                 <th>Actions</th>
                             </tr>
+                            @foreach($params[0] as $chgt)
                             <tr>
-                                <td>1412000001</td>
-                                <td>JA000001</td>
-                                <td>prenom1 nom 1</td>
-                                <td>Etudiant</td>
-                                <td>Lauréat</td>
+                                <td>{{ $chgt->cne }}</td>
+                                <td>{{ $chgt->prenom }} {{ $chgt->nom }}</td>
+                                <td>{{ $chgt->libelle }}</td>
+                                <td>{{ $chgt->date }}</td>
                                 <td>
-                                    <button class="btn btn-success">Accepter</button>
-                                    <button class="btn btn-danger">Refuser</button>
+                                    <form methode="" action="">
+                                        <input type="submit" class="btn btn-success" value="Accepter"/>
+                                        <input type="submit" class="btn btn-danger" value="Refuser"/>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1412000002</td>
-                                <td>JA000002</td>
-                                <td>prenom2 nom 2</td>
-                                <td>Etudiant</td>
-                                <td>Lauréat</td>
-                                <td>
-                                    <button class="btn btn-success">Accepter</button>
-                                    <button class="btn btn-danger">Refuser</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table> 
                         <br/><br/><br/>
                     </div>

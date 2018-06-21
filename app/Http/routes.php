@@ -71,6 +71,71 @@ Route::get('/monProfil', function () {
 Route::get('/admin', function () {
 	$title = "SuiviDesLaureats- Admin";
 	$targetView = (isset($_GET["targetView"])) ? $_GET["targetView"] : '';
+	$nomAdmin = $_SESSION['currentUser']['nom'] . " " .  $_SESSION['currentUser']['prenom'];
+	$photo = $_SESSION['currentUser']['photo'];
 
-    return view('pages/admin', ['title' => $title, 'targetView' => $targetView]);
+	$dataNotif = array(
+		'nbrNewInsc'=>DB::select('select count(id) nbr from utilisateurs where etat = 0 and status_id <> 4'),
+		'nbrComptesDesactives'=>DB::select('select count(id) nbr from utilisateurs where etat_compte = 0 and status_id <> 4'),
+		'nbrPubAEvaluer'=>DB::select('select count(id) nbr from publications where etat = "en attente"'),
+		'nbrDemandesChgt'=>DB::select('select count(id) nbr from demandes where etat = "en attente" and admin_id = ' . $_SESSION['currentUser']['id'])
+	);
+
+	$params = array();
+
+	switch($targetView){
+		case 'validerInscriptions' : 
+			$insc = DB::select('
+				select * 
+				from utilisateurs u, status s 
+				where u.status_id = s.id 
+				and etat = 0 
+				and status_id <> 4'
+			);
+			array_push($params, $insc);break;
+
+		case 'activerDesactiverCompte' : 
+			$comptes = DB::select('
+				select * 
+				from utilisateurs u, status s 
+				where u.status_id = s.id 
+				and etat = 1 
+				and status_id <> 4'
+		);
+			array_push($params, $comptes);break;
+
+		case 'validerPublications' : 
+			$publications = DB::select('
+				select * 
+				from utilisateurs u, status s, publications p
+				where u.id = p.utilisateur_id
+				and u.status_id = s.id
+				and p.etat <> "active"
+				and status_id <> 4'
+			);
+			array_push($params, $publications);break;
+
+		case 'chengementStatut' : 
+			$chgtStatus = DB::select('
+				select us.cne, us.nom, us.prenom, s.libelle, d.date
+				from demandes d, utilisateurs us, utilisateurs ua, status s 
+				where d.admin_id = ua.id
+				and d.utilisateur_id = us.id
+				and ua.id = 12
+				and us.status_id = s.id 
+				and us.etat = 1'
+			);
+			array_push($params, $chgtStatus);break;
+	}
+
+    return view('pages/admin', [
+		'title' => $title, 
+		'nom_admin' => $nomAdmin,
+		'photo' => $photo,
+		'data_notif' => $dataNotif,
+		'targetView' => $targetView,
+		'params' => $params
+	]);
 });
+
+Route::get('/deconnexion', 'InscriptionController@deconnexion');
