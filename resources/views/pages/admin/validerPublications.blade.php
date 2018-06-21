@@ -17,24 +17,19 @@
                                 <th>Publication Contenu</th>
                                 <th>Actions</th>
                             </tr>
+                            @foreach($params[0] as $pub)
                             <tr>
-                                <td>prenom1 nom 1</td>
-                                <td>Etudiant</td>
-                                <td>txt txt txt txt</td>
+                                <td>{{ $pub->prenom }} {{ $pub->nom }}</td>
+                                <td>{{ $pub->libelle }}</td>
+                                <td>{{ $pub->contenu }}</td>
                                 <td>
-                                    <button class="btn btn-success">Valider</button>
-                                    <button class="btn btn-danger">Retirer</button>
+                                    <form methode="" action="">
+                                        <input type="submit" class="btn btn-success" value="Accepter"/>
+                                        <input type="submit" class="btn btn-danger" value="Refuser"/>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>prenom2 nom 2</td>
-                                <td>Etudiant</td>
-                                 <td>txt--txt</td>
-                                <td>
-                                    <button class="btn btn-success">Valider</button>
-                                    <button class="btn btn-danger">Retirer</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table> 
                         <br/><br/><br/>
                     </div>

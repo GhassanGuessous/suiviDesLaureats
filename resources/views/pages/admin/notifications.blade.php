@@ -10,39 +10,39 @@
                   		<div class="col-md-2 col-sm-2 col-md-offset-2 box0">
                   			<div class="box1">
         					  			<span class="li_news"></span>
-        					  			<h3>22</h3>
+        					  			<h3>{{$data_notif['nbrNewInsc'][0]->nbr}}</h3>
                         </div>
-        					  			<p>22 nouvelles inscriptions n'a pas encors évaluées </p>
+        					  			<p>{{$data_notif['nbrNewInsc'][0]->nbr}} nouvelles inscriptions n'a pas encors évaluées </p>
                   		</div>
 
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
         					  			<span class="li_stack"></span>
-        					  			<h3>23</h3>
+        					  			<h3>{{$data_notif['nbrComptesDesactives'][0]->nbr}}</h3>
                           			</div>
-        					  			<p>23 comptes sont désactiver !</p>
+        					  			<p>{{$data_notif['nbrComptesDesactives'][0]->nbr}} comptes sont désactiver !</p>
                   		</div>
 
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
         					  			<span class="li_news"></span>
-        					  			<h3>10</h3>
+        					  			<h3>{{$data_notif['nbrPubAEvaluer'][0]->nbr}}</h3>
                           			</div>
-        					  			<p>10 nouvelles publications n'a pas encors évaluées !</p>
+        					  			<p>{{$data_notif['nbrPubAEvaluer'][0]->nbr}} nouvelles publications n'a pas encors évaluées !</p>
                   		</div>
 
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
         					  			<span class="li_data"></span>
-        					  			<h3>09</h3>
+        					  			<h3>{{$data_notif['nbrDemandesChgt'][0]->nbr}}</h3>
                         </div>
-        					  			<p>09 demander de changement de status !</p>
+        					  			<p>{{$data_notif['nbrDemandesChgt'][0]->nbr}} demander de changement de status !</p>
                   		</div>
                   	
                   	</div><!-- /row mt -->	                            
                       
                   </div><!-- /col-lg-3 -->
-              </div><! --/row -->
+              </div><!-- /row -->
           </section>
       </section>
 

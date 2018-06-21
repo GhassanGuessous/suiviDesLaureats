@@ -15,29 +15,33 @@
                                 <th>CNE</th>
                                 <th>CIN</th>
                                 <th>Prénom & Nom</th>
-                                <th>statut</th>
+                                <th>Statut</th>
+                                <th>Etat</th>
                                 <th>Actions</th>
                             </tr>
+                            @foreach($params[0] as $insc)
                             <tr>
-                                <td>1412000001</td>
-                                <td>JA000001</td>
-                                <td>prenom1 nom 1</td>
-                                <td>Etudiant</td>
+                                @if($insc->status_id == 1)
+                                    <td>----</td>
+                                @else
+                                    <td>{{ $insc->cne }}</td>
+                                @endif
+                                <td>{{ $insc->id }}</td>
+                                <td>{{ $insc->prenom }} {{ $insc->nom }}</td>
+                                <td>{{ $insc->libelle }}</td>
+                                @if($insc->etat == 1)
+                                    <td>Activée</td>
+                                @else
+                                    <td>Refusée</td>
+                                @endif
                                 <td>
-                                    <button class="btn btn-success">Accepter</button>
-                                    <button class="btn btn-danger">Refuser</button>
+                                    <form methode="" action="">
+                                        <input type="submit" class="btn btn-success" value="Accepter"/>
+                                        <input type="submit" class="btn btn-danger" value="Refuser"/>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1412000002</td>
-                                <td>JA000002</td>
-                                <td>prenom2 nom 2</td>
-                                <td>Etudiant</td>
-                                <td>
-                                    <button class="btn btn-success">Accepter</button>
-                                    <button class="btn btn-danger">Refuser</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table> 
                         <br/><br/><br/>
                     </div>

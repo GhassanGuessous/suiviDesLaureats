@@ -18,6 +18,7 @@
                     <li class="scroll"><a href="#nouveautes">Nouveautés</a></li>                   
                     <li class=""><a href="/recherche" target="_blanck">Recherche</a></li>                  
                     <li class=""><a href="/monProfil" target="_blanck">Mon.Profil</a></li>                    
+                    <li class=""><a href="deconnexion">Se déconnecter</a></li>
                 </ul>
             </div>
         </div><!--/.container-->

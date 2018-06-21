@@ -13,23 +13,27 @@
                         <table class="table">
                             <tr>
                                 <th>Utilisateur</th>
-                                <th>statut</th>
+                                <th>Statut</th>
+                                <th>Etat du compte</th>
                                 <th>Actions</th>
                             </tr>
+                            @foreach($params[0] as $compte)
                             <tr>
-                                <td>prenom1 nom 1</td>
-                                <td>Etudiant</td>
+                                <td>{{ $compte->prenom }} {{ $compte->nom }}</td>
+                                <td>{{ $compte->libelle }}</td>
+                                @if($compte->etat_compte == 1)
+                                    <td>Débloqué</td>
+                                @else
+                                    <td>Bloqué</td>
+                                @endif
                                 <td>
-                                    <button class="btn btn-success">Activer</button>
+                                    <form methode="" action="">
+                                        <input type="submit" class="btn btn-success" value="Bloquer"/>
+                                        <input type="submit" class="btn btn-danger" value="Débloquer"/>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>prenom2 nom 2</td>
-                                <td>Etudiant</td>
-                                <td>
-                                    <button class="btn btn-danger">Desactiver</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table> 
                         <br/><br/><br/>
                     </div>

@@ -5,8 +5,8 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><img src="assets/images/users/user.1.jpg" class="img-circle" width="60"></p>
-              	  <h5 class="centered">Full Name</h5>
+              	  <p class="centered"><img src="assets/images/users/{{ $photo }}" class="img-circle" width="60"></p>
+              	  <h5 class="centered">{{ $nom_admin }}</h5>
               	  	
                   <li class="mt">
                       <a>
@@ -40,6 +40,13 @@
                       <a href="?targetView=chengementStatut" >
                           <i class="fa fa-tasks"></i>
                           <span>Changement de statut</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="deconnexion" >
+                          <i class="fa fa-tasks"></i>
+                          <span>Déconnexion</span>
                       </a>
                   </li>
 
