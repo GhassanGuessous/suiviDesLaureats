@@ -31,7 +31,9 @@ class ProfilController extends Controller
 			$interval = $datetime1->diff($datetime2);
 			$age = ROUND($interval->format("%a")/30/12); 
 
-  		return view('pages/tasks/userProfil', ['title' => $title, 'idProfil' =>$id, 'targetUser' => $targetUser, 'age' => $age, 'nombrePubs' => $nombrePubs, 'etat' => $etat]);
+			$description = $targetUser[0]->libelle.' '.$targetUser[0]->promo.' '.$targetUser[0]->filiereName;
+
+  		return view('pages/tasks/userProfil', ['title' => $title, 'idProfil' =>$id, 'targetUser' => $targetUser, 'age' => $age, 'nombrePubs' => $nombrePubs, 'etat' => $etat, 'description' => $description]);
 	}
 
 
