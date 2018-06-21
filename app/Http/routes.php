@@ -33,6 +33,13 @@ Route::get('/publier', 'PublierController@index');
 Route::get('/recherche', 'RechercheController@index');
 Route::post('/getRechercheResult', 'RechercheController@getRechercheResult');
 
+Route::get('/monProfil', 'MonProfilController@index');
+Route::post('/modifierInfos', 'MonProfilController@modifierInfos');
+Route::post('/modifierInfosAuth', 'MonProfilController@modifierInfosAuth');
+Route::post('/ajouterCV', 'MonProfilController@ajouterCV');
+
+
+
 
 
 // to do ::
@@ -59,13 +66,6 @@ Route::post('inscrireEtudiantLaureat', 'InscriptionController@saveEtudiantLaurea
 Route::post('inscrireEnseignant', 'InscriptionController@saveEnseignant');
 Route::post('authentification', 'InscriptionController@auth');
 
-
-Route::get('/monProfil', function () {
-	$title = "SuiviDesLaureats- Accueil";
-	$targetView = "";
-   
-    return view('pages/tasks/monProfil', ['title' => $title, 'targetView' => $targetView]);
-});
 
 
 Route::get('/admin', function () {

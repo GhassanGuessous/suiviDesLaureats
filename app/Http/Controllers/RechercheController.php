@@ -28,7 +28,7 @@ class RechercheController extends Controller
 
 		foreach ($users as $key => $value) {
 			echo "<div class='div1'>";
-			echo "<img class='img' src='assets/images/users/user.1.jpg'>";
+			echo "<img class='img' src='assets/images/users/".$value->url_photo."'>";
 			echo "<span class='span1'>".$value->nom.' '.$value->prenom."</span>";
 			echo "<div class='div2'>";
 			echo "<span class='span2'><a href='/profil/".$value->id."'>consulter le profil</a></span>";

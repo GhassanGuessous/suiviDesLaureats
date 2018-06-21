@@ -141,6 +141,6 @@ class InscriptionController extends Controller
 		$_SESSION['currentUser']['id'] = $utilisateur->id; 		
 		$_SESSION['currentUser']['email'] = $utilisateur->email; 		
 		$_SESSION['currentUser']['nom'] = $utilisateur->nom; 		
-		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom; 
+		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom;
 	}
 }

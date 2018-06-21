@@ -19,7 +19,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <img src="assets/images/users/user.1.jpg" class="publicationImg">
+                                                <img src="assets/images/users/{{$item->url_photo}}" class="publicationImg">
                                             </div>
                                             <div class="col-md-10 publicationUserInfoDiv">
                                                 <a href="/profil/{{$item->utilisateur_id}}" target="_blanck"><span class="PublicationUserName">{{$item->nom}}.{{$item->prenom}}</span></a>

@@ -73,10 +73,10 @@
                   <div class='fieldset-body' id='login_form'>
                     <button onclick="openLoginInfo();" class='b b-form i i-more' title='Actions'></button>
 
-                    <img src="../assets/images/users/user.2.jpg" class="monProfilImg">
+                    <img src="../assets/images/users/{{strtoupper($targetUser[0]->url_photo)}}" class="monProfilImg">
 
                     <p class='field'><label for='user'>{{$targetUser[0]->nom}} {{$targetUser[0]->prenom}} ({{$age}} ans)</label></p>
-                    <p class='field'><label for='pass'>{{$targetUser[0]->libelle}} {{$targetUser[0]->filiereName}}</label></p>
+                    <p class='field'><label for='pass'>{{$description}}</label></p>
                     <p class='field'><label for='pass'>{{$targetUser[0]->email}}</label></p>
                     <p class='field'><label for='pass'>Tel: 11.22.33.44.55</label></p>
                     <p class='field'><label for='pass'>Nombre publications : {{$nombrePubs}}</label></p>
@@ -91,7 +91,7 @@
 
                 <div class='line-wh'></div>
 
-                <button onclick="window.open('../documents_cvs/cvExmplaire.pdf'); return true;" class='b-support'>Voir le CV</button>
+                <button onclick="window.open('../documents_cvs/{{$targetUser[0]->url_cv}}'); return true;" class='b-support'>Voir le CV</button>
                 <button id="myBtn" class='b-support'>Contacter</button>
                 <div class='line-wh'></div>
             </div>
