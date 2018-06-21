@@ -22,12 +22,15 @@ class HomeController extends Controller
             ->join('status', 'utilisateurs.status_id', '=', 'status.id')
             ->join('filieres', 'utilisateurs.filiere_id', '=', 'filieres.id')
             ->where('publications.etat', '=', 'active')
-            ->select('publications.*', 'utilisateurs.*', 'status.libelle', 'filieres.nom AS fillereName')
+            ->select('publications.*', 'publications.id AS id_publication', 'utilisateurs.*', 'status.libelle', 'filieres.nom AS fillereName')
+            ->orderByRaw('date DESC')
             ->get();
 
         $allLikes = DB::table('likes')->get();
 
-	  	return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView, 'allPublications' => $allPublications, 'allLikes' => $allLikes, 'found' => $found]);
+    //    dd($allPublications);
+
+	 	return view('pages/tasks/home', ['title' => $title, 'targetView' => $targetView, 'allPublications' => $allPublications, 'allLikes' => $allLikes, 'found' => $found]);
 	}
 
 

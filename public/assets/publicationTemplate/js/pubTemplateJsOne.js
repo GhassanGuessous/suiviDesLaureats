@@ -33,7 +33,7 @@ var publicationForm = React.createClass({displayName: "publicationForm",
     },
   render: function(){
     return (
-         React.createElement("form", {action: "/home#nouveautes"}, 
+         React.createElement("form", {action: "/publier"}, 
         
             React.createElement("fieldset", null, 
                 React.createElement("legend", null, "Nouvelle Publication"), 

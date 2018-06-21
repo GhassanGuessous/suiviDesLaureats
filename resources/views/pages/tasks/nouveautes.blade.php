@@ -22,7 +22,7 @@
                                                 <img src="assets/images/users/user.1.jpg" class="publicationImg">
                                             </div>
                                             <div class="col-md-10 publicationUserInfoDiv">
-                                                <a href="/profil" target="_blanck"><span class="PublicationUserName">{{$item->nom}}.{{$item->prenom}}</span></a>
+                                                <a href="/profil/{{$item->utilisateur_id}}" target="_blanck"><span class="PublicationUserName">{{$item->nom}}.{{$item->prenom}}</span></a>
                                                 <span class="PublicationUserStatut">{{$item->libelle}} {{$item->promo}} {{$item->fillereName}}</span>   
                                                 <span class="PublicationUserStatut" style="float: right;">{{$item->date}}</span>  
                                             </div>
@@ -40,13 +40,13 @@
 
                                     <div class="panel-footer publicationFooter">
                                         @foreach ($allLikes as $likeItem)
-                                            @if ($likeItem->id_publication == $item->id && $likeItem->id_user == $_SESSION['currentUser']['id'])  
-                                                <a href="/dislikedPublication/{{$item->id}}" class="publicationLike">J'aime</a>
+                                            @if ($likeItem->id_publication == $item->id_publication && $likeItem->id_user == $_SESSION['currentUser']['id'])  
+                                                <a href="/dislikedPublication/{{$item->id_publication}}" class="publicationLike">J'aime</a>
                                                 @php $found = 'true' @endphp
                                             @endif
                                         @endforeach
                                         @if ($found == 'false')
-                                            <a  href="/likedPublication/{{$item->id}}" class="publicationDislike">J'aime</a>
+                                            <a  href="/likedPublication/{{$item->id_publication}}" class="publicationDislike">J'aime</a>
                                         @else
                                             @php $found = 'false' @endphp
                                         @endif

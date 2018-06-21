@@ -13,13 +13,22 @@
 
 session_start();
 $_SESSION['currentUser']['id'] = 1; 		// to do after login task !!
+$_SESSION['currentUser']['email'] = 'connectedUserMail@gmail.com'; 		// to do after login task !!
+$_SESSION['currentUser']['nom'] = 'connectedUserNom'; 		// to do after login task !!
+$_SESSION['currentUser']['prenom'] = 'connectedUserPrenom'; 		// to do after login task !!
 
 
 
 Route::get('/', 'MainController@index');
 Route::get('/home', 'HomeController@index');
+
 Route::get('/likedPublication/{id}', 'HomeController@like');
 Route::get('/dislikedPublication/{id}', 'HomeController@dislike');
+
+Route::get('/profil/{id}', 'ProfilController@index');
+
+Route::post('/contact', 'MailSenderController@index');
+Route::post('/publier', 'PublierController@index');
 
 
 
@@ -48,11 +57,6 @@ Route::get('/recherche', function () {
     return view('pages/tasks/recherche', ['title' => $title]);
 });
 
-
-Route::get('/profil', function () {
-	$title = "SuiviDesLaureats- User.Profil";   
-    return view('pages/tasks/userProfil', ['title' => $title]);
-});
 
 Route::get('/admin', function () {
 	$title = "SuiviDesLaureats- Admin";
