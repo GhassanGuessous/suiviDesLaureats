@@ -30,6 +30,9 @@ Route::get('/profil/{id}', 'ProfilController@index');
 Route::post('/contact', 'MailSenderController@index');
 Route::get('/publier', 'PublierController@index');
 
+Route::get('/recherche', 'RechercheController@index');
+Route::post('/getRechercheResult', 'RechercheController@getRechercheResult');
+
 
 
 // to do ::
@@ -62,12 +65,6 @@ Route::get('/monProfil', function () {
 	$targetView = "";
    
     return view('pages/tasks/monProfil', ['title' => $title, 'targetView' => $targetView]);
-});
-
-
-Route::get('/recherche', function () {
-	$title = "SuiviDesLaureats- Recherche";   
-    return view('pages/tasks/recherche', ['title' => $title]);
 });
 
 

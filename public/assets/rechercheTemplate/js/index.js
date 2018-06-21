@@ -22,11 +22,31 @@ $("#cuboid form").submit(function(){
 	//finish loading in 3s
 	setTimeout(complete, 3000);
 	//prevent default form submisson
+
 	return false;
 })
 function complete()
 {
 	$("#cuboid form").removeClass("loading").addClass("complete");
+	var name = $("#email").val();
+	var _token = $('input[name="_token"]').val();
+
+
+	$.ajax({
+        url: '/getRechercheResult',
+        type: 'POST',
+        data: {_token: _token, name: name},
+        beforeSend: function() {
+        	console.log("send !");
+		},
+		complete: function(){
+			console.log("complete !");
+		},
+        success: function(data) {
+            console.log("success !");
+            $("#targetAjaxQuery").html(data);
+        }
+	});
 }
 //reset/refresh functionality
 $(".reset-icon").click(function(){

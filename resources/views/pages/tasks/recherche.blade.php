@@ -5,6 +5,37 @@
         <link rel="stylesheet prefetch" href="assets/rechercheTemplate/css/style1.css">	            
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
         <link rel="stylesheet" href="assets/rechercheTemplate/css/style.css">
+        <style type="text/css">
+        	.img{
+        		border-radius: 50px;
+        		width: 100px;
+        		height: 100px;
+        	}
+        	.div1{
+        		float: left;
+        		margin-left: 10%;
+        		margin-top: 4%;
+        	}
+        	.span1{        		
+        		float: right;
+        		padding-top: 30px;
+        		padding-left: 15px;
+        	}
+        	.span2{        		
+        		float: right;
+        	}
+        	.div2{
+        		display: block;
+        		margin-top: -55px;
+        	}
+        	.div2 a{
+        		text-decoration: none;
+        		font-size: 14px;
+        	}
+        	.div2 a:hover{
+        		color: black;
+        	}
+        </style>
 </head>
 <body>
 	<section>
@@ -24,6 +55,7 @@
 						<label for="submit" class="submit-icon">
 							<i class="fa fa-chevron-right"></i>
 						</label>
+						{{ csrf_field() }}
 						<input type="text" id="email" class="cuboid-text" placeholder="utilisateur" autocomplete="off"/>
 						<!-- hidden submit button -->
 						<input type="submit" id="submit" />
@@ -40,6 +72,15 @@
 					</div>
 				</form>
 			</div>
+
+			<div id="targetAjaxQuery"></div>
+
+
+			
+
+			
+
+
         </div><!--/.container-->
     </section><!--/#recherche-->
 
