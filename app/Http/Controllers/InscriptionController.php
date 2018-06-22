@@ -143,13 +143,9 @@ class InscriptionController extends Controller
 	public function sessionFunc($utilisateur){
 		$_SESSION['currentUser']['id'] = $utilisateur->id; 		
 		$_SESSION['currentUser']['email'] = $utilisateur->email; 		
-		$_SESSION['currentUser']['nom'] = $utilisateur->nom; 		
-<<<<<<< HEAD
-		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom;
-=======
+		$_SESSION['currentUser']['nom'] = $utilisateur->nom; 	
 		$_SESSION['currentUser']['prenom'] = $utilisateur->prenom; 
 		$_SESSION['currentUser']['photo'] = $utilisateur->url_photo;
->>>>>>> d4b1409ada62792da77cac78ce65c030e6419357
 	}
 
 	public function evaluerInscription(){

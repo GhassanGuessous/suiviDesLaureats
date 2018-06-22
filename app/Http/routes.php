@@ -124,6 +124,7 @@ Route::get('/admin', function () {
 				and d.utilisateur_id = us.id
 				and ua.id = '.$idAdmin.'
 				and us.status_id = s.id 
+				and d.etat = "en attente"
 				and us.etat = 1'
 			);
 			array_push($params, $chgtStatus);break;
